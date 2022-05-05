@@ -3,7 +3,6 @@ import Cards from "../Cards/Cards";
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar";
 import Loading from "./Loading/Loading";
-import classNames from "classnames";
 import "./Home.scss";
 import background from "../img/Landing.jpg";
 
@@ -18,14 +17,14 @@ export default function Home() {
         <Loading setLoading={setLoading} />
       ) : (
         <div>
-          <div className={classNames("home-conteiner")}>
+          <div className="home-conteiner">
             <img
-              className={classNames("home-image")}
+              className="home-image"
               src={background}
               alt='Background'
             />
 
-            <div className={classNames("home-content")}>
+            <div className="home-content">
               <NavBar
                 setOrder={setOrder}
                 setCurrentPage={setCurrentPage}

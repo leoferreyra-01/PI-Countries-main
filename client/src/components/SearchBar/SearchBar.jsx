@@ -1,11 +1,10 @@
-import classNames from "classnames";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNameCountries } from "../../Redux/Actions";
 import "./SearchBar.scss";
 import search from "../img/search.png";
 
-export default function SearchBar({setCurrentPage}) {
+export default function SearchBar({ setCurrentPage }) {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
 
@@ -26,20 +25,20 @@ export default function SearchBar({setCurrentPage}) {
     }
   }
   return (
-      <div className={classNames("search-container")}>
-        <input
-          className={classNames("search-input")}
-          type='text'
-          placeholder={"Search a Country..."}
-          value={name}
-          onChange={(e) => handleSearch(e)}
-        />
-        <button
-          className={classNames("search-btn")}
-          type='submit'
-          onClick={(e) => handleSubmit(e)}>
-          <img className={classNames("search-img")} src={search} alt='Search' />
-        </button>
-      </div>
+    <div className='search-container'>
+      <input
+        className='search-input'
+        type='text'
+        placeholder={"Search a Country..."}
+        value={name}
+        onChange={(e) => handleSearch(e)}
+      />
+      <button
+        className='search-btn'
+        type='submit'
+        onClick={(e) => handleSubmit(e)}>
+        <img className='search-img' src={search} alt='Search' />
+      </button>
+    </div>
   );
 }

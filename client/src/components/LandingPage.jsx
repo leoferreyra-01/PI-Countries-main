@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./LandingPage.scss";
@@ -13,16 +12,16 @@ export default function LandingPage() {
   }
   return (
     <div>
-      <div className={classNames("landing-container")}>
+      <div className="landing-container">
         <img
-          className={classNames("landing-image")}
+          className="landing-image"
           src={background}
           alt='Background'
         />
-        <h2 className={classNames("landing-title1")}>
+        <h2 className="landing-title1">
           LET'S TRAVEL AROUND THE WORLD
         </h2>
-        <h1 className={classNames("landing-title2")}>
+        <h1 className="landing-title2">
           WELCOME TO COUNTRIES APP!!
         </h1>
 
@@ -30,7 +29,7 @@ export default function LandingPage() {
           onClick={(e) => {
             handleClick(e);
           }}
-          className={classNames("landing-btn")}>
+          className="landing-btn">
           LET THE JOURNEY BEGIN
         </button>
       </div>

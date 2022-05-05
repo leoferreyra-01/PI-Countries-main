@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -29,29 +28,25 @@ export default function Details() {
       {loading === true ? (
         <LoadingDetails setLoading={setLoading} />
       ) : (
-        <div className={classNames("details-container")}>
-          <div className={classNames("details-card")}>
-            <img
-              className={classNames("details-img")}
-              src={background}
-              alt='Background'
-            />
-            <div className={classNames("details-content")}>
-              <h1 className={classNames("details-title")}>{details.name}</h1>
+        <div className='details-container'>
+          <div className='details-card'>
+            <img className='details-img' src={background} alt='Background' />
+            <div className='details-content'>
+              <h1 className='details-title'>{details.name}</h1>
               <img
-                className={classNames("details-flag")}
+                className='details-flag'
                 src={details.flag}
                 alt={`flag from ${details.name}`}
               />
-              <div className={classNames("details-info")}>
-                <div className={classNames("info-location")}>
+              <div className='details-info'>
+                <div className='info-location'>
                   <h2>Continent: {details.continent}</h2>
                   <h2>Capital: {details.capital}</h2>
                   <h2>Subregion: {details.subregion}</h2>
                 </div>
-                <div className={classNames("location-maps")}>
+                <div className='location-maps'>
                   <button
-                    className={classNames("location-btn")}
+                    className='location-btn'
                     onClick={(e) => {
                       e.preventDefault();
                       window.open(details.mapLocation, "_blank");
@@ -60,14 +55,14 @@ export default function Details() {
                   </button>
                   <h3>View Location</h3>
                 </div>
-                <div className={classNames("info-geography")}>
+                <div className='info-geography'>
                   <h2>Area:</h2>
                   <h3>{details.area} km2</h3>
                   <h2>Population:</h2>
                   <h3>{details.population}</h3>
                 </div>
               </div>
-              <div className={classNames('details-activity')}>
+              <div className='details-activity'>
                 <p>
                   <strong>Activities</strong>
                 </p>
@@ -84,10 +79,8 @@ export default function Details() {
                 );
               })}
             </div>
-            <div className={classNames("details-btn")}>
-              <button
-                className={classNames("btn-home")}
-                onClick={(e) => hancleClick(e)}>
+            <div className='details-btn'>
+              <button className='btn-home' onClick={(e) => hancleClick(e)}>
                 Back to Home
               </button>
             </div>

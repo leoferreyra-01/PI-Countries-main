@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -128,15 +127,11 @@ export default function CreateActivity() {
       {loading === true ? (
         <LoadingCreate setLoading={setLoading} />
       ) : (
-        <div className={classNames("create-container")}>
-          <img
-            className={classNames("create-image")}
-            src={background}
-            alt='Background'
-          />
-          <div className={classNames("navigate-btn")}>
+        <div className='create-container'>
+          <img className='create-image' src={background} alt='Background' />
+          <div className='navigate-btn'>
             <button
-              className={classNames("btn-home")}
+              className='btn-home'
               onClick={(e) => {
                 e.preventDefault();
                 navigate("/countries");
@@ -144,21 +139,19 @@ export default function CreateActivity() {
               Back to Home
             </button>
           </div>
-          <form
-            className={classNames("create-form")}
-            onSubmit={(e) => handleSubmit(e)}>
-            <h1 className={classNames("create-title")}>Create your Activity</h1>
+          <form className='create-form' onSubmit={(e) => handleSubmit(e)}>
+            <h1 className='create-title'>Create your Activity</h1>
             <input
-              className={classNames("input-form")}
+              className='input-form'
               type='text'
               name='name'
               value={input.name}
               placeholder='Activity name..'
               onChange={handleChange}
             />
-            {errors.name && <p className={classNames('form-error')}>{errors.name}</p>}
+            {errors.name && <p className='form-error'>{errors.name}</p>}
             <select
-              className={classNames("select-form")}
+              className='select-form'
               name='difficulty'
               onChange={handleChange}>
               <option value=''>Difficulty</option>
@@ -168,17 +161,19 @@ export default function CreateActivity() {
               <option value='Professional'>Professional</option>
               <option value='Expert'>Expert</option>
             </select>
-            {errors.difficulty && <p className={classNames('form-error')}>{errors.difficulty}</p>}
+            {errors.difficulty && (
+              <p className='form-error'>{errors.difficulty}</p>
+            )}
             <input
-              className={classNames("input-form")}
+              className='input-form'
               type='number'
               name='duration'
               placeholder='Enter the duration in hours'
               onChange={handleChange}
             />
-            {errors.duration && <p className={classNames('form-error')}>{errors.duration}</p>}
+            {errors.duration && <p className='form-error'>{errors.duration}</p>}
             <select
-              className={classNames("select-form")}
+              className='select-form'
               name='season'
               onChange={handleChange}>
               <option value=''>Season</option>
@@ -187,9 +182,9 @@ export default function CreateActivity() {
               <option value='Winter'>Winter</option>
               <option value='Spring'>Spring</option>
             </select>
-            {errors.season && <p className={classNames('form-error')}>{errors.season}</p>}
+            {errors.season && <p className='form-error'>{errors.season}</p>}
             <select
-              className={classNames("select-form")}
+              className='select-form'
               name='country'
               placeholder='Select Countries'
               onChange={(e) => handleSelect(e)}>
@@ -201,19 +196,19 @@ export default function CreateActivity() {
               ))}
             </select>
             {input.countries.length > 0 && (
-              <div className={classNames("countries")}>
+              <div className='countries'>
                 <h3>Selected Countries</h3>
-                <hr className={classNames("separation-bar")}/>
-                <ul className={classNames("list-country")}>
+                <hr className='separation-bar' />
+                <ul className='list-country'>
                   {input.countries.map((c) => {
                     let name = countries.map((country) =>
                       country.idName === c ? country.name : null
                     );
                     return (
-                      <li className={classNames("country-cont")} key={c.id}>
+                      <li className='country-cont' key={c.id}>
                         <button
                           name={c}
-                          className={classNames("btn-cont")}
+                          className='btn-cont'
                           onClick={(e) => {
                             handleDelete(e);
                           }}>
@@ -226,8 +221,10 @@ export default function CreateActivity() {
                 </ul>
               </div>
             )}
-            {errors.countries && <p className={classNames('form-error')}>{errors.countries}</p>}
-            <button className={classNames("btn-submit")} type='submit'>
+            {errors.countries && (
+              <p className='form-error'>{errors.countries}</p>
+            )}
+            <button className='btn-submit' type='submit'>
               Create Activity
             </button>
           </form>

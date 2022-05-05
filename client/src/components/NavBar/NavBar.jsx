@@ -1,4 +1,3 @@
-import classnames from "classnames";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -24,13 +23,17 @@ export default function NavBar({ setOrder, setCurrentPage }) {
     navigate("/create");
   }
   return (
-    <div className={classnames("nav-container")}>
-      <FilterActivity setCurrentPage={setCurrentPage}/>
-      <FilterContinent setCurrentPage={setCurrentPage}/>
-      <FilterAlpha setOrder={setOrder}/>
-      <FilterPopulation setOrder={setOrder}/>
-      <button className={classnames("nav-btn")}  onClick={(e) => handleFilters(e)}>Clear Filters</button>
-      <button className={classnames("nav-btn")}  onClick={(e) => handleClick(e)}>Create Activity</button>
+    <div className='nav-container'>
+      <FilterActivity setCurrentPage={setCurrentPage} />
+      <FilterContinent setCurrentPage={setCurrentPage} />
+      <FilterAlpha setOrder={setOrder} />
+      <FilterPopulation setOrder={setOrder} />
+      <button className='nav-btn' onClick={(e) => handleFilters(e)}>
+        Clear Filters
+      </button>
+      <button className='nav-btn' onClick={(e) => handleClick(e)}>
+        Create Activity
+      </button>
     </div>
   );
 }

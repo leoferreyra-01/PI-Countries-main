@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllCountries } from "../../Redux/Actions";
 import Pagination from "../Pagination/Pagination";
-import classNames from "classnames";
 import { Link } from "react-router-dom";
 import "./Cards.scss";
 import location from "../img/Location-icon-design-on-transparent-background-PNG.png";
@@ -30,21 +29,21 @@ export default function Cards( {setCurrentPage, currentPage} ) {
   return (
     <div>
       <Pagination
-        className={classNames("cards-pagination")}
+        className="cards-pagination"
         currentPage={currentPage}
         totalCount={countries.length}
         pageSize={countryPerPage}
         onPageChange={pag}
       />
       <div>
-        <span className={classNames("cards-conteiner")}>
+        <span className="cards-conteiner">
           {currentCountry?.map((el) => {
             return (
-              <div key={el.id} className={classNames("cards")}>
-                <div className={classNames("cards-content")}>
-                  <img src={el.flag} alt='' width='300rem' height='180rem'className={classNames('cards-flag')} />
-                  <h4 className={classNames("cards-name")}> {el.name}</h4>
-                  <h4 className={classNames("cards-info")}>
+              <div key={el.id} className="cards">
+                <div className="cards-content">
+                  <img src={el.flag} alt='' width='300rem' height='180rem'className='cards-flag' />
+                  <h4 className="cards-name"> {el.name}</h4>
+                  <h4 className="cards-info">
                     <img
                       src={location}
                       alt='location'
@@ -53,7 +52,7 @@ export default function Cards( {setCurrentPage, currentPage} ) {
                     />
                      {el.continent}
                   </h4>
-                  <h4 className={classNames("cards-info")}>
+                  <h4 className="cards-info">
                   <img
                       src={population}
                       alt='location'
@@ -63,7 +62,7 @@ export default function Cards( {setCurrentPage, currentPage} ) {
                      {el.population}
                   </h4>
                   <Link to={`/countries/${el.id}`}>
-                    <button className={classNames("cards-btn")}>
+                    <button className="cards-btn">
                       View Details
                     </button>
                   </Link>
@@ -74,7 +73,7 @@ export default function Cards( {setCurrentPage, currentPage} ) {
         </span>
       </div>
       <Pagination
-        className={classNames("cards-pagination")}
+        className="cards-pagination"
         currentPage={currentPage}
         totalCount={countries.length}
         pageSize={countryPerPage}
@@ -84,4 +83,4 @@ export default function Cards( {setCurrentPage, currentPage} ) {
   );
 }
 
-// classNames={classNames("cards-pagination")}
+// classNames="cards-pagination")}
