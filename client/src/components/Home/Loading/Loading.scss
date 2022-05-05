@@ -1,0 +1,30 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .loading-image {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .loading-content {
+    position: relative;
+    font-size: 3rem;
+    padding: 15rem;
+    color: white;
+    text-shadow: 0.2rem 0.1rem 0 rgb(0, 0, 0);
+    .loading-content1 {
+      padding: 3rem;
+      background-color: rgba(0, 0, 0, 0.193);
+      border: 1px solid transparent;
+      border-radius: 10px;
+      backdrop-filter: blur(1px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.558);
+    }
+  }
+}

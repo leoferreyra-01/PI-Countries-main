@@ -1,0 +1,130 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .details-card {
+    width: 75rem;
+    cursor: default;
+    .details-img {
+      min-height: 100%;
+      min-width: 1024px;
+      width: 100%;
+      height: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .details-content {
+      margin-top: 2rem;
+      position: relative;
+      background-color: rgba(172, 115, 0, 0.541);
+      border: 1.5px solid black;
+      border-radius: 1.1rem;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 6rem 0.6rem black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      text-shadow: 0.2rem 0.1rem 0 black;
+      .details-title {
+        font-size: 2.4rem;
+        &:hover {
+          font-style: italic;
+        }
+      }
+      .details-flag {
+        width: 30rem;
+        height: auto;
+      }
+      .details-info {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        .info-location {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          height: 100%;
+          width: 30%;
+          float: left;
+          left: 5%;
+        }
+        .location-maps {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          .location-btn {
+            background-color: transparent;
+            border: 1px solid transparent;
+            font-size: 3rem;
+            transition: 0.3s;
+            &:hover {
+              cursor: pointer;
+              transform: scale(1.2);
+            }
+            &:active {
+              transform: scale(0.92);
+            }
+          }
+        }
+        .info-geography {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          height: 100%;
+          width: 30%;
+          float: right;
+          right: 5%;
+        }
+      }
+      .details-activity {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-style: italic;
+      }
+    }
+    .details-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: 1rem;
+      .btn-home {
+        padding: 0.2rem;
+        transition: 0.2s;
+        color: white;
+        text-shadow: 0.16rem 0.1rem 0 black;
+        font-size: 1.2rem;
+        background-color: rgb(111, 24, 0);
+        border: 2px solid transparent;
+        border-radius: 1rem;
+        box-shadow: 0.1rem 0.1rem 0 0 black;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(125, 123, 0);
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  align-items: center;
+  .nav-btn {
+    padding: 0.2rem;
+    transition: 0.2s;
+    color: white;
+    text-shadow: 0.16rem 0.1rem 0 black;
+    font-size: inherit;
+    background-color: rgb(111, 24, 0);
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.1rem 0 0 black;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      background-color: rgb(125, 123, 0);
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

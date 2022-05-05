@@ -1,0 +1,10 @@
+export const COUNTRIES_URL = '/countries';
+export const ACTIVITY_URL = 'activity';
+export const GET_COUNTRIES = 'GET_COUNTRIES';
+export const GET_DETAILS = 'GET_DETAILS';
+export const GET_ACTIVITIES = 'GET_ACTIVITIES';
+export const GET_NAME_COUNTRIES = 'GET_NAME_COUNTRIES';
+export const FILTER_ACTIVITY = 'FILTER_ACTIVITY';
+export const FILTER_BY_ALPHA = 'FILTER_BY_ALPHA';
+export const FILTER_CONTINENT = 'FILTER_CONTINENT';
+export const POPULATION_ORDER = 'POPULATION_ORDER';

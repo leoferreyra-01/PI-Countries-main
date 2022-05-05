@@ -1,0 +1,169 @@
+.create-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  .navigate-btn {
+    position: absolute;
+    top: 5%;
+    .btn-home {
+      position: relative;
+      padding: 0.2rem;
+      transition: 0.2s;
+      color: white;
+      text-shadow: 0.16rem 0.1rem 0 black;
+      font-size: inherit;
+      background-color: rgb(111, 24, 0);
+      border: 2px solid transparent;
+      border-radius: 1rem;
+      box-shadow: 0.1rem 0.1rem 0 0 black;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(125, 123, 0);
+        transform: scale(1.1);
+      }
+      &:active {
+        transform: scale(0.8);
+      }
+    }
+  }
+  .create-image {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .create-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15%;
+    .create-title {
+      color: white;
+      text-shadow: 0.2rem 0.1rem 0 black;
+      &:hover {
+        cursor: default;
+        font-style: italic;
+      }
+    }
+    .input-form {
+      margin-top: 2rem;
+      width: 95%;
+      background-color: rgba(172, 115, 0, 0.541);
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-size: 1rem;
+      padding: 0.5rem;
+      color: rgb(255, 255, 255);
+      text-shadow: 0.1rem 0.05rem 0 rgb(0, 0, 0);
+      box-shadow: 0 0 1rem -0.1rem black;
+      outline: none;
+      &::placeholder {
+        color: rgb(255, 255, 255);
+        text-shadow: 0.1rem 0.05rem 0 rgb(0, 0, 0);
+      }
+    }
+    .select-form {
+      margin-top: 2rem;
+      width: 100%;
+      background-color: rgba(172, 115, 0, 0.541);
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-size: 1rem;
+      padding: 0.5rem;
+      color: rgb(255, 255, 255);
+      text-shadow: 0.1rem 0.05rem 0 rgb(0, 0, 0);
+      box-shadow: 0 0 1rem -0.1rem black;
+      outline: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .countries {
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: auto;
+      height: auto;
+      position: fixed;
+      left: 67%;
+      /* top: 25%; */
+      background-color: rgba(172, 115, 0, 0.374);
+      box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(14px);
+      border-radius: 6px;
+      h3{
+        color: white;
+        text-shadow: 0.17rem 0.1rem 0 black;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+      .separation-bar {
+        margin-top: 0;
+        width: 90%;
+      }
+      .list-country {
+        padding: 0;
+        margin: 0;
+        li {
+          list-style-type: none;
+          display: inline;
+          padding: 0;
+          margin-bottom: 10%;
+        }
+        .country-cont {
+          float: right;
+          width: 80%;
+          margin-top: 0px;
+          right: 0;
+          text-align: left;
+          .btn-cont {
+            display: inline;
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+          }
+        }
+      }
+    }
+    .form-error {
+      margin-top: -2px;
+      color: #ff7300;
+      font-size: 1.3rem;
+      text-shadow: 0.1rem 0.05rem 0 black;
+    }
+    .btn-submit {
+      margin-top: 2rem;
+      padding: 0.2rem;
+      transition: 0.2s;
+      color: white;
+      text-shadow: 0.16rem 0.1rem 0 black;
+      font-size: inherit;
+      background-color: rgb(111, 24, 0);
+      border: 2px solid transparent;
+      border-radius: 1rem;
+      box-shadow: 0.1rem 0.1rem 0 0 black;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(125, 96, 0);
+        transform: scale(1.1);
+      }
+      &:active {
+        transform: scale(0.8);
+      }
+    }
+  }
+}
