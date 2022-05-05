@@ -70,9 +70,10 @@ const reducer = (state = initialState, action) => {
       };
     case FILTER_ACTIVITY:
       const countriesAct = state.countries
+      const countriesAll = state.allCountries
       const activityFilter =
         action.payload === "All"
-          ? countriesAct
+          ? countriesAll
           : countriesAct.filter(
               (e) =>
                 e.activities &&
