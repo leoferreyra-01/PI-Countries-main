@@ -53,7 +53,7 @@ router.get("/:id", async (req, res) => {
     country
       ? res.status(200).json(country)
       : res
-          .status(400)
+          .status(404)
           .json({
             error: "COUNTRY_NOT_FOUND",
             description: `There is not a country with ${id.toUpperCase()}`,
