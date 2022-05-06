@@ -31,9 +31,13 @@
       text-shadow: 0.2rem 0.1rem 0 black;
       .details-title {
         font-size: 2.4rem;
+        margin-bottom: 0;
         &:hover {
           font-style: italic;
         }
+      }
+      .details-idName {
+        margin-top: 0;
       }
       .details-flag {
         width: 30rem;
@@ -99,14 +103,34 @@
         font-size: 2rem;
         font-style: italic;
       }
+      .no-activity {
+        display: flex;
+        font-size: 1.3rem;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        background-color: rgba(133, 64, 0, 0.702);
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-bottom: 0.3rem;
+        color: white;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-shadow: 0.2rem 0.1rem 0 black;
+        transition: 0.3s;
+        &:hover{
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+      }
     }
     .details-btn {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
       position: relative;
       margin-top: 1rem;
-      .btn-home {
+      .btn-navigate {
         padding: 0.2rem;
         transition: 0.2s;
         color: white;

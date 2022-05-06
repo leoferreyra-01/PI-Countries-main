@@ -23,6 +23,11 @@ export default function Details() {
     navigate("/countries");
   }
 
+  function handleCreate(e) {
+    e.preventDefault();
+    navigate("/create");
+  }
+
   return (
     <>
       {loading === true ? (
@@ -33,6 +38,7 @@ export default function Details() {
             <img className='details-img' src={background} alt='Background' />
             <div className='details-content'>
               <h1 className='details-title'>{details.name}</h1>
+              <h3 className='details-idName'>( {details.idName} )</h3>
               <img
                 className='details-flag'
                 src={details.flag}
@@ -67,21 +73,34 @@ export default function Details() {
                   <strong>Activities</strong>
                 </p>
               </div>
-              {details.activities?.map((e) => {
-                return (
-                  <Activity
-                    key={e.id}
-                    name={e.name}
-                    difficulty={e.difficulty}
-                    duration={e.duration}
-                    season={e.season}
-                  />
-                );
-              })}
+              {details.activities.length ? (
+                details.activities.map((e) => {
+                  return (
+                    <Activity
+                      key={e.id}
+                      name={e.name}
+                      difficulty={e.difficulty}
+                      duration={e.duration}
+                      season={e.season}
+                    />
+                  );
+                })
+              ) : (
+                <h3 className='no-activity'>
+                  This country has no activities for the moment. ¡Create one!{" "}
+                </h3>
+              )}
             </div>
             <div className='details-btn'>
-              <button className='btn-home' onClick={(e) => hancleClick(e)}>
+              <button className='btn-navigate' onClick={(e) => hancleClick(e)}>
                 Back to Home
+              </button>
+              <button
+                className='btn-navigate'
+                onClick={(e) => {
+                  handleCreate(e);
+                }}>
+                Create Activity
               </button>
             </div>
           </div>
