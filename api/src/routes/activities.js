@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
       });
       if (foundCountry) newActivity.addCountries(foundCountry);
     });
-    res.status(200).send("Activity added correctly");
+    res.status(201).send("Activity added correctly");
   } catch (e) {
     console.log(e);
     res.status(400).send("Error at creating activity ");

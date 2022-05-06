@@ -27,9 +27,9 @@ describe("Country routes", () => {
     Country.sync({ force: true }).then(() => Country.create(countryTest))
   );
   describe("GET /countries", () => {
-    it("Deberia devolver 200 con una peticion tipo GET", () =>
+    it("Should return with status 200", () =>
       agent.get("/countries").expect(200));
-    it("Deberia devolver el pais que se solicitó de la db", async () => {
+    it("Should return with all the country information", async () => {
       let res = await agent.get("/countries?name=Neverland");
       let pais = await Country.findOne({
         where: {
@@ -50,10 +50,12 @@ describe("Country routes", () => {
       let res = await agent.get("/countries?name=dasdasda");
       expect(res.statusCode).to.equal(404);
     });
-    it("should get msg 'Country not found' if Country no exist", async () => {
+    it("should get error code 'COUNTRY_NOT_FOUND' and the description 'The entered country does not exist.' if Country no exist", async () => {
       let res = await agent.get("/countries?name=dasdasda");
       console.log(res.text);
-      expect(res.text).to.equal('{"error":"COUNTRY_NOT_FOUND","description":"The entered country does not exist."}');
+      expect(res.text).to.equal(
+        '{"error":"COUNTRY_NOT_FOUND","description":"The entered country does not exist."}'
+      );
     });
   });
 });

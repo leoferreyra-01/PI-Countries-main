@@ -21,12 +21,12 @@ describe("Country model", () => {
   describe("Validaciones", () => {
     beforeEach(() => Country.sync({ force: true }));
     describe("name", async () => {
-      it("Deberia devolver un error si no se le envia nombre", (done) => {
+      it("Should return an error if the name is not sended", (done) => {
         Country.create({})
-          .then(() => done(new Error("Requiere un nombre valido")))
+          .then(() => done(new Error("Valid name is required")))
           .catch(() => done());
       });
-      it("Deberia crear un Country si solo se le pasa name, flagImg, continent and capital ", async () => {
+      it("Should create a country only if a name, flag, continent, capital and idName are provided", async () => {
         let pais = await Country.create({
           idName: 'NVL',
           name: "Neverland",
@@ -38,7 +38,7 @@ describe("Country model", () => {
       });
     });
     describe("create", () => {
-      it("Deberia cargar los valores pasados al crear un Country", async () => {
+      it("Should load the values provided to create a country", async () => {
         let pais = await Country.create(countryTest);
         let neverland = pais.dataValues;
         expect(neverland.name).to.equal(countryTest.name);
