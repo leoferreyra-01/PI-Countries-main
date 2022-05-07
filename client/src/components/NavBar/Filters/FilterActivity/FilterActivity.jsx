@@ -22,7 +22,7 @@ export default function FilterActivity({setCurrentPage}) {
         <option value='All'>All Activities</option>
         {allActivities.map((el) => {
           return (
-            <option value={el.name} key={el}>
+            <option value={el.name} key={el.id}>
               {el.name}
             </option>
           );
