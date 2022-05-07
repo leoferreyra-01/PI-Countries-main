@@ -1,5 +1,5 @@
 export const COUNTRIES_URL = '/countries';
-export const ACTIVITY_URL = 'activity';
+export const ACTIVITY_URL = '/activity';
 export const GET_COUNTRIES = 'GET_COUNTRIES';
 export const GET_DETAILS = 'GET_DETAILS';
 export const GET_ACTIVITIES = 'GET_ACTIVITIES';
