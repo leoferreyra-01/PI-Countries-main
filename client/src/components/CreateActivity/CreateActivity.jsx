@@ -70,7 +70,7 @@ export default function CreateActivity() {
         difficulty: "",
         duration: "",
         season: "",
-        countriesInActivity: [],
+        countries: [],
       });
       dispatch(getActivities());
       navigate("/countries");

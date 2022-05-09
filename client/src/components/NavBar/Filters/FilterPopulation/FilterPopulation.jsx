@@ -15,7 +15,7 @@ export default function FilterPopulation({ setOrder }) {
   return (
     <div className='filter-container'>
       <select className='filter-content' onChange={(e) => handlePopulation(e)}>
-        <option hidden selected value=''>
+        <option hidden value=''>
           By Population
         </option>
         <option value='High'>Lower</option>

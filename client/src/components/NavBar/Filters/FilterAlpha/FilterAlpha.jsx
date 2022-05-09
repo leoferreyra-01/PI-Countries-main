@@ -15,7 +15,7 @@ export default function FilterAlpha({ setOrder }) {
   return (
     <div className='filter-container'>
       <select className='filter-content' onChange={(e) => handleAlpha(e)}>
-        <option hidden selected value=''>
+        <option hidden value=''>
           Alphabetical
         </option>
         <option value='A-Z'>A-Z</option>

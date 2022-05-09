@@ -36,7 +36,7 @@ const Pagination = props => {
     <ul
       className={classnames('pagination-container', { [className]: className })}
     >
-      <li
+      <li 
         className={classnames('pagination-item', {
           disabled: currentPage === 1
         })}
