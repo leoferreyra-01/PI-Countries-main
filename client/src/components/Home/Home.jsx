@@ -10,7 +10,7 @@ import { getAllCountries } from "../../Redux/Actions";
 
 export default function Home() {
   const [order, setOrder] = useState(""); // eslint-disable-line
-  const [currentPage, setCurrentPage] = useState(1); // eslint-disable-line
+  const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const countries = useSelector((state) => state.countries);
   const dispatch = useDispatch();

@@ -53,7 +53,9 @@ export function getNameCountries(name) {
         type: GET_NAME_COUNTRIES,
         payload: countriesJson.data,
       });
-    } catch (e) {}
+    } catch (e) {
+      window.alert(e.response.data.description)
+    }
   };
 }
 

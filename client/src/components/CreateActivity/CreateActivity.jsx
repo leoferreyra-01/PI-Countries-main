@@ -74,6 +74,8 @@ export default function CreateActivity() {
       });
       dispatch(getActivities());
       navigate("/countries");
+    }else{
+      alert('Please complete all the entries before creating an activity')
     }
   }
 

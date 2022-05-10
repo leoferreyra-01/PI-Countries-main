@@ -29,7 +29,7 @@ export default function NavBar({ setOrder, setCurrentPage }) {
       <FilterAlpha setOrder={setOrder} />
       <FilterPopulation setOrder={setOrder} />
       <button className='nav-btn' onClick={(e) => handleFilters(e)}>
-        Clear Filters
+        Show all Countries
       </button>
       <button className='nav-btn' onClick={(e) => handleClick(e)}>
         Create Activity

@@ -17,7 +17,7 @@ export default function SearchBar({ setCurrentPage }) {
     if (e.key === "Enter") {
       handleSubmit(e);
     }
-  };
+  }
   function handleSubmit(e) {
     e.preventDefault();
     if (name.length > 0) {
@@ -25,7 +25,7 @@ export default function SearchBar({ setCurrentPage }) {
       setCurrentPage(1);
       setName("");
     } else {
-      alert("Enter a available country please");
+      alert("Enter a country name please");
     }
   }
   return (
