@@ -18,7 +18,7 @@ export function getAllCountries() {
       const countries = await axios.get(COUNTRIES_URL);
       return dispatch({ type: GET_COUNTRIES, payload: countries.data });
     } catch (e) {
-      return e;
+      console.log(e);
     }
   };
 }
@@ -64,9 +64,7 @@ export function postActivity(payload) {
     try {
       const newActivity = await axios.post(ACTIVITY_URL, payload);
       return newActivity;
-    } catch (e) {
-      
-    }
+    } catch (e) {}
   };
 }
 

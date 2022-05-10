@@ -13,6 +13,8 @@
     left: 0;
   }
   .landing-title1 {
+    display: flex;
+    flex-direction: column;
     color: white;
     position: absolute;
     top: 5%;
@@ -30,8 +32,16 @@
       font-size: 2.8rem;
       transition: 0.1s cubic-bezier(1, 0, 0, 1);
     }
+    @media (max-width: 1024px) {
+      font-size: 1.7rem;
+    }
+    @media (min-width: 320px) and (max-width:425px){
+      font-size: 1.1rem;
+    }
   }
   .landing-title2 {
+    display: flex;
+    flex-direction: column;
     color: white;
     position: absolute;
     top: 41%;
@@ -51,8 +61,16 @@
       font-size: 3.4rem;
       transition: 0.1s cubic-bezier(1, 0, 0, 1);
     }
+    @media (max-width: 1024px) {
+      font-size: 2.1rem;
+    }
+    @media (min-width: 320px) and (max-width:425px){
+      font-size: 1.3rem;
+    }
   }
   .landing-btn {
+    display: flex;
+    flex-direction: column;
     font-size: 1.5rem;
     font-family: "Times New Roman", Times, serif;
     font-weight: 700;
@@ -80,6 +98,16 @@
       font-size: 1rem;
       left: 75%;
       transition: all 0.3s cubic-bezier(0.65, 0, 0.076, 1);
+    }
+    @media (max-width: 1024px) {
+      font-size: 1.1rem;
+      left: auto;
+      &:hover{
+        left: auto;
+      }
+      &:active{
+        left: auto;
+      }
     }
   }
 }

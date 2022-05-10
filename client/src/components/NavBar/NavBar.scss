@@ -5,7 +5,13 @@
   margin-bottom: 1rem;
   padding: 1rem;
   align-items: center;
+  @media (max-width: 768px){
+    position: relative;
+    display: inline-block;
+    width: max-content;
+  }
   .nav-btn {
+    position: relative;
     padding: 0.2rem;
     transition: 0.2s;
     color: white;
@@ -22,6 +28,20 @@
     }
     &:active {
       transform: scale(0.95);
+    }
+    @media (max-width: 768px) {
+      left: 125%;
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 425px) {
+      left: 40%;
+    }
+    @media (max-width: 375px) {
+      left: 30%;
+    }
+    @media (max-width: 320px) {
+      left: 20%;
     }
   }
 }

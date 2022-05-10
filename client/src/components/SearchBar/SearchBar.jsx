@@ -13,7 +13,11 @@ export default function SearchBar({ setCurrentPage }) {
     setName("");
     setName(e.target.value);
   }
-
+  function handleEnter(e) {
+    if (e.key === "Enter") {
+      handleSubmit(e);
+    }
+  };
   function handleSubmit(e) {
     e.preventDefault();
     if (name.length > 0) {
@@ -21,7 +25,7 @@ export default function SearchBar({ setCurrentPage }) {
       setCurrentPage(1);
       setName("");
     } else {
-      alert("Enter a available country please c:");
+      alert("Enter a available country please");
     }
   }
   return (
@@ -31,11 +35,12 @@ export default function SearchBar({ setCurrentPage }) {
         type='text'
         placeholder={"Search a Country..."}
         value={name}
+        onKeyPress={handleEnter}
         onChange={(e) => handleSearch(e)}
       />
       <button
         className='search-btn'
-        type='submit'
+        type='Submit'
         onClick={(e) => handleSubmit(e)}>
         <img className='search-img' src={search} alt='Search' />
       </button>

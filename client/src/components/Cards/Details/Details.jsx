@@ -10,7 +10,7 @@ import "./Details.scss";
 export default function Details() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const details = useSelector((state) => state.details);
+  let details = useSelector((state) => state.details);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -62,10 +62,8 @@ export default function Details() {
                   <h3>View Location</h3>
                 </div>
                 <div className='info-geography'>
-                  <h2>Area:</h2>
-                  <h3>{details.area} km2</h3>
-                  <h2>Population:</h2>
-                  <h3>{details.population}</h3>
+                  <h2>Area: {details.area} km2</h2>
+                  <h2>Population: {details.population}</h2>
                 </div>
               </div>
               <div className='details-activity'>

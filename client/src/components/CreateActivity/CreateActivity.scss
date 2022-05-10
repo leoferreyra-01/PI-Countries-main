@@ -95,7 +95,7 @@
       width: auto;
       height: auto;
       position: fixed;
-      left: 67%;
+      left: 70%;
       /* top: 25%; */
       background-color: rgba(172, 115, 0, 0.374);
       box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.2);
@@ -138,6 +138,11 @@
           }
         }
       }
+      @media (max-width: 1024px){
+        left: auto;
+        position: relative;
+        margin-top: 1rem;
+      }
     }
     .form-error {
       margin-top: -2px;
@@ -163,6 +168,9 @@
       }
       &:active {
         transform: scale(0.8);
+      }
+      @media (max-width: 1024px){
+        margin-bottom: 1.5rem;
       }
     }
   }

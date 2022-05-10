@@ -3,8 +3,11 @@
   flex-direction: column;
   align-items: center;
   .details-card {
-    width: 75rem;
+    width: 70rem;
     cursor: default;
+    @media (max-width: 1024px) {
+      width: auto;
+    }
     .details-img {
       min-height: 100%;
       min-width: 1024px;
@@ -42,6 +45,10 @@
       .details-flag {
         width: 30rem;
         height: auto;
+        @media (min-width: 320px) and (max-width: 425px){
+          width: 20rem;
+          height: auto;
+        }
       }
       .details-info {
         width: 100%;
@@ -50,6 +57,9 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        @media (min-width: 320px) and (max-width: 425px){
+          flex-direction: column;
+        }
         .info-location {
           display: flex;
           flex-direction: column;
@@ -60,6 +70,12 @@
           width: 30%;
           float: left;
           left: 5%;
+          @media (min-width: 320px) and (max-width: 425px){
+            width: auto;
+            height: auto;
+            margin-left: 1.5rem;
+            margin-right: 1rem;
+          }
         }
         .location-maps {
           height: 100%;
@@ -69,11 +85,19 @@
           justify-content: center;
           align-items: center;
           position: absolute;
+          @media (min-width: 320px) and (max-width: 425px){
+            width: auto;
+            height: auto;
+            position: relative;
+          }
           .location-btn {
             background-color: transparent;
             border: 1px solid transparent;
             font-size: 3rem;
             transition: 0.3s;
+            @media (min-width: 320px) and (max-width: 425px){
+              float: none;
+            }
             &:hover {
               cursor: pointer;
               transform: scale(1.2);
@@ -93,6 +117,12 @@
           width: 30%;
           float: right;
           right: 5%;
+          @media (min-width: 320px) and (max-width: 425px){
+            height: auto;
+            width: auto;
+            margin-left: 1.5rem;
+            margin-right: 1rem;
+          }
         }
       }
       .details-activity {

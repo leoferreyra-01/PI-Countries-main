@@ -1,19 +1,39 @@
-.activity-container{
+.activity-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-style: italic;
+  padding: 1rem;
+  @media (max-width: 1024px) {
+    font-size: 1rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+  }
+  @media (min-width: 320px) and (max-width: 425px) {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .activity-card {
+    display: flex;
+    font-size: 1.3rem;
+    justify-content: space-around;
     align-items: center;
-    font-size: 2rem;
-    font-style: italic;
-    padding: 1rem;
-    .activity-card{
-        display: flex;
-        font-size: 1.3rem;
-        justify-content: space-around;
-        align-items: center;
-        width: 150%;
-        background-color: rgba(133, 64, 0, 0.702);
-        border: 1px solid black;
-        border-radius: 10px;
+    width: 150%;
+    background-color: rgba(133, 64, 0, 0.702);
+    border: 1px solid black;
+    border-radius: 10px;
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
     }
+    @media (min-width: 320px) and (max-width: 425px) {
+      display: flex;
+      flex-direction: column;
+      padding: 0.3rem;
+    }
+  }
 }

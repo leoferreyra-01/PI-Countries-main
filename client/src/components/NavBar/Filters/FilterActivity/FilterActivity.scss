@@ -1,21 +1,42 @@
-.filter-container{
-    position: relative;
-    .filter-content{
-        background-color: rgba(90, 57, 0, 0.597);
-        backdrop-filter: blur(10px);
-        color: #fff;
-        font-size: inherit;
-        text-shadow: 0.2rem 0.1rem 0 black;
-        padding: 0.5em;
-        padding-right: 2.5em;
-        border: 0;
-        margin-right: 10px;
-        margin-top: 10px;
-        border-radius: 3px;
-        text-indent: 0.01px;
-        text-overflow: "";
-        -webkit-appearance: button;
-        cursor: pointer;
-        outline: none;
-    }
+.filter-container {
+  position: relative;
+  align-items: center;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    left: 125%;
+  }
+  @media (max-width: 425px) {
+    display: flex;
+    flex-direction: column;
+    left: 40%;
+  }
+  @media (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    left: 30%;
+  }
+  @media (max-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    left: 20%;
+  }
+  .filter-content {
+    background-color: rgba(90, 57, 0, 0.597);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: inherit;
+    text-shadow: 0.2rem 0.1rem 0 black;
+    padding: 0.5em;
+    padding-right: 2.5em;
+    border: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: "";
+    -webkit-appearance: button;
+    cursor: pointer;
+    outline: none;
+  }
 }
