@@ -26,11 +26,10 @@
     backdrop-filter: blur(2px);
     text-shadow: 0.05rem 0.1rem 0 black;
     box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
+    transition: 0.2s;
     &:hover {
       cursor: default;
       background-color: rgba(102, 69, 38, 0.559);
-      font-size: 2.8rem;
-      transition: 0.1s cubic-bezier(1, 0, 0, 1);
     }
     @media (max-width: 1024px) {
       font-size: 1.7rem;
@@ -53,13 +52,12 @@
     backdrop-filter: blur(2px);
     text-shadow: 0.07rem 0.1rem 0 black;
     box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
+    transition: 0.2s;
     &:hover {
       cursor: default;
       background-color: rgba(102, 69, 38, 0.559);
       text-shadow: 0 0.28rem 0.15rem rgb(0, 0, 0);
       box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
-      font-size: 3.4rem;
-      transition: 0.1s cubic-bezier(1, 0, 0, 1);
     }
     @media (max-width: 1024px) {
       font-size: 2.1rem;
@@ -86,18 +84,18 @@
     backdrop-filter: blur(2px);
     text-shadow: 0.07rem 0.1rem 0 rgb(255, 255, 255);
     box-shadow: 0.1rem 0.1rem 0rem black;
+    transition: 0.5s;
     &:hover {
+      transform: scale(1.1);
       background-color: rgba(122, 64, 39, 0.472);
-      font-size: 1.4rem;
       left: 73%;
       backdrop-filter: blur(2px);
       box-shadow: 0.1rem 0.1rem 0rem 0rem black;
-      transition: all 0.4s cubic-bezier(0.65, 0, 0.076, 1);
     }
     &:active {
+      transform: scale(0.6);
       font-size: 1rem;
       left: 75%;
-      transition: all 0.3s cubic-bezier(0.65, 0, 0.076, 1);
     }
     @media (max-width: 1024px) {
       font-size: 1.1rem;
