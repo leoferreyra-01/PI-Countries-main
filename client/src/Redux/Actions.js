@@ -18,18 +18,19 @@ export function getAllCountries() {
       const countries = await axios.get(COUNTRIES_URL);
       return dispatch({ type: GET_COUNTRIES, payload: countries.data });
     } catch (e) {
-      window.alert(e.response.data.description)
+      window.alert(e.response.data.description);
     }
   };
 }
 
 export function getDetails(id) {
-  return async function (dispatch) {
+  return function (dispatch) {
     try {
-      const cotJson = await axios.get(`${COUNTRIES_URL}/${id}`);
-      return dispatch({ type: GET_DETAILS, payload: cotJson.data });
+      axios
+        .get(`${COUNTRIES_URL}/${id}`)
+        .then((r) => dispatch({ type: GET_DETAILS, payload: r.data }));
     } catch (e) {
-      window.alert(e.response.data.description)
+      window.alert(e.response.data.description);
     }
   };
 }
@@ -40,7 +41,7 @@ export function getActivities() {
       const actJson = await axios.get(ACTIVITY_URL);
       return dispatch({ type: GET_ACTIVITIES, payload: actJson.data });
     } catch (e) {
-      window.alert(e.response.data.description)
+      window.alert(e.response.data.description);
     }
   };
 }
@@ -54,7 +55,7 @@ export function getNameCountries(name) {
         payload: countriesJson.data,
       });
     } catch (e) {
-      window.alert(e.response.data.description)
+      window.alert(e.response.data.description);
     }
   };
 }
@@ -65,10 +66,10 @@ export function postActivity(payload) {
   return async function () {
     try {
       const newActivity = await axios.post(ACTIVITY_URL, payload);
-      window.alert(newActivity.data.msg)
+      window.alert(newActivity.data.msg);
       return newActivity;
     } catch (e) {
-      window.alert(e.response.data.description)
+      window.alert(e.response.data.description);
     }
   };
 }
