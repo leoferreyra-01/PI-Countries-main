@@ -49,7 +49,7 @@ export default function CreateActivity() {
     countries: [],
   });
   const [errors, setErrors] = useState({});
-  const countries = useSelector((state) => state.countries);
+  const countries = useSelector((state) => state.countries).sort((a, b) => a.name.localeCompare(b.name));
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -62,9 +62,7 @@ export default function CreateActivity() {
     setErrors(validationForm(input));
     const errors = validationForm(input);
     if (Object.values(errors).length === 0) {
-      console.log(input);
       dispatch(postActivity(input));
-      alert("Activity added correctly!");
       setInput({
         name: "",
         difficulty: "",
@@ -121,7 +119,6 @@ export default function CreateActivity() {
         countries: input.countries.filter((c) => c !== e.target.name),
       })
     );
-    console.log(input);
   };
 
   return (
@@ -156,7 +153,7 @@ export default function CreateActivity() {
               className='select-form'
               name='difficulty'
               onChange={handleChange}>
-              <option value=''>Difficulty</option>
+              <option hidden value=''>Difficulty</option>
               <option value='Begginer'>Begginer</option>
               <option value='Amateur'>Amateur</option>
               <option value='Normal'>Normal</option>
@@ -178,7 +175,7 @@ export default function CreateActivity() {
               className='select-form'
               name='season'
               onChange={handleChange}>
-              <option value=''>Season</option>
+              <option hidden value=''>Season</option>
               <option value='Summer'>Summer</option>
               <option value='Autumn'>Autumn</option>
               <option value='Winter'>Winter</option>
@@ -190,7 +187,7 @@ export default function CreateActivity() {
               name='country'
               placeholder='Select Countries'
               onChange={(e) => handleSelect(e)}>
-              <option value=''>Select Countries</option>
+              <option hidden value=''>Select Countries</option>
               {countries.map((e) => (
                 <option key={e.id} value={e.idName} name={e.name}>
                   {e.name}

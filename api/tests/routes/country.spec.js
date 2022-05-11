@@ -52,7 +52,6 @@ describe("Country routes", () => {
     });
     it("should get error code 'COUNTRY_NOT_FOUND' and the description 'The entered country does not exist.' if Country no exist", async () => {
       let res = await agent.get("/countries?name=dasdasda");
-      console.log(res.text);
       expect(res.text).to.equal(
         '{"error":"COUNTRY_NOT_FOUND","description":"The entered country does not exist."}'
       );

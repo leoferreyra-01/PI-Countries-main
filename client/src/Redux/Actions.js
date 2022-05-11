@@ -18,7 +18,7 @@ export function getAllCountries() {
       const countries = await axios.get(COUNTRIES_URL);
       return dispatch({ type: GET_COUNTRIES, payload: countries.data });
     } catch (e) {
-      console.log(e);
+      window.alert(e.response.data.description)
     }
   };
 }
@@ -29,7 +29,7 @@ export function getDetails(id) {
       const cotJson = await axios.get(`${COUNTRIES_URL}/${id}`);
       return dispatch({ type: GET_DETAILS, payload: cotJson.data });
     } catch (e) {
-      return e;
+      window.alert(e.response.data.description)
     }
   };
 }
@@ -40,7 +40,7 @@ export function getActivities() {
       const actJson = await axios.get(ACTIVITY_URL);
       return dispatch({ type: GET_ACTIVITIES, payload: actJson.data });
     } catch (e) {
-      return e;
+      window.alert(e.response.data.description)
     }
   };
 }
@@ -65,8 +65,11 @@ export function postActivity(payload) {
   return async function () {
     try {
       const newActivity = await axios.post(ACTIVITY_URL, payload);
+      window.alert(newActivity.data.msg)
       return newActivity;
-    } catch (e) {}
+    } catch (e) {
+      window.alert(e.response.data.description)
+    }
   };
 }
 

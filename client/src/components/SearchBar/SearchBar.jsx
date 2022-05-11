@@ -20,12 +20,12 @@ export default function SearchBar({ setCurrentPage }) {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    if (name.length > 0) {
+    if (name.length > 2) {
       dispatch(getNameCountries(name));
       setCurrentPage(1);
       setName("");
     } else {
-      alert("Enter a country name please");
+      alert("Enter at least three letters");
     }
   }
   return (

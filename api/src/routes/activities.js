@@ -9,8 +9,7 @@ router.use(express.json());
 
 router.post("/", async (req, res) => {
   try {
-    const { name, difficulty, duration, season, countries } =
-      req.body;
+    const { name, difficulty, duration, season, countries } = req.body;
     const newActivity = await Activity.create({
       name: name,
       difficulty: difficulty,
@@ -23,10 +22,15 @@ router.post("/", async (req, res) => {
       });
       if (foundCountry) newActivity.addCountries(foundCountry);
     });
-    res.status(201).send("Activity added correctly");
+    res.status(201).json({msg: "Activity created correctly"});
   } catch (e) {
     console.log(e);
-    res.status(400).send("Error at creating activity ");
+    res
+      .status(400)
+      .json({
+        error: "CREATE_ACTIVITY_ERROR",
+        description: "Error creating the activity",
+      });
   }
 });
 
