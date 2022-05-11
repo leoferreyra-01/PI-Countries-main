@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <>
-      {loading === true ? (
+      {countries.length === 0 && loading === true ? (
         <Loading setLoading={setLoading} />
       ) : (
         <div>
