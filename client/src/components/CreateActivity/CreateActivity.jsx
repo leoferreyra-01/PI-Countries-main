@@ -49,7 +49,9 @@ export default function CreateActivity() {
     countries: [],
   });
   const [errors, setErrors] = useState({});
-  const countries = useSelector((state) => state.countries).sort((a, b) => a.name.localeCompare(b.name));
+  const countries = useSelector((state) => state.countries).sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -63,17 +65,11 @@ export default function CreateActivity() {
     const errors = validationForm(input);
     if (Object.values(errors).length === 0) {
       dispatch(postActivity(input));
-      setInput({
-        name: "",
-        difficulty: "",
-        duration: "",
-        season: "",
-        countries: [],
-      });
-      dispatch(getActivities());
-      navigate("/countries");
-    }else{
-      alert('Please complete all the entries before creating an activity')
+      setTimeout(() => {
+        navigate("/countries");
+      }, 1600);
+    } else {
+      alert("Please complete all the entries before creating an activity");
     }
   }
 
@@ -153,7 +149,9 @@ export default function CreateActivity() {
               className='select-form'
               name='difficulty'
               onChange={handleChange}>
-              <option hidden value=''>Difficulty</option>
+              <option hidden value=''>
+                Difficulty
+              </option>
               <option value='Begginer'>Begginer</option>
               <option value='Amateur'>Amateur</option>
               <option value='Normal'>Normal</option>
@@ -175,7 +173,9 @@ export default function CreateActivity() {
               className='select-form'
               name='season'
               onChange={handleChange}>
-              <option hidden value=''>Season</option>
+              <option hidden value=''>
+                Season
+              </option>
               <option value='Summer'>Summer</option>
               <option value='Autumn'>Autumn</option>
               <option value='Winter'>Winter</option>
@@ -187,7 +187,9 @@ export default function CreateActivity() {
               name='country'
               placeholder='Select Countries'
               onChange={(e) => handleSelect(e)}>
-              <option hidden value=''>Select Countries</option>
+              <option hidden value=''>
+                Select Countries
+              </option>
               {countries.map((e) => (
                 <option key={e.id} value={e.idName} name={e.name}>
                   {e.name}
