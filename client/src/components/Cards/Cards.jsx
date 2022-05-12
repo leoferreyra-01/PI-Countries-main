@@ -36,8 +36,6 @@ export default function Cards({ setCurrentPage, currentPage, countries }) {
                   <img
                     src={el.flag}
                     alt=''
-                    width='300rem'
-                    height='180rem'
                     className='cards-flag'
                   />
                   <h4 className='cards-name'> {el.name}</h4>

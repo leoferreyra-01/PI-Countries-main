@@ -10,7 +10,7 @@ const getApiInfo = async () => {
         where: {
           idName: element.cca3,
           name: element.name.common,
-          flag: element.flags[0],
+          flag: element.flags[1],
           continent: element.continents[0],
           capital: element.capital ? element.capital[0] : "Capital not found",
           subregion: element.subregion

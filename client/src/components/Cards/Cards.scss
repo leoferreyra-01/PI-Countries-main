@@ -31,9 +31,9 @@
         transform: scale(1.1);
       }
       .cards-flag {
-        width: 100%;
-        max-height: 300px;
-        position: absolute;
+        width: auto;
+        max-height: 180px;
+        height: auto;
         top: 0;
         left: 0;
         margin: auto;
@@ -41,7 +41,6 @@
       }
       .cards-name {
         position: relative;
-        margin-top: 10.7rem;
         font-size: 1.8rem;
         color: #fff;
         text-shadow: 0.16rem 0.1rem 0 black;
