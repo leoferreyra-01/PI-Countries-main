@@ -44,4 +44,21 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.delete("/del/:idActivity", async (req, res) => {
+  const { idActivity } = req.params;
+  try {
+    const act = await Activity.findByPk(idActivity);
+    if (!act) {
+      return res.status(404).json({
+        error: "ACT_NOT_FOUND",
+        description: `There is no activity with the id ${idActivity}`,
+      });
+    }
+    await act.destroy();
+    return res.json({ msg: `The activity with the id ${idActivity} was deleted` });
+  } catch (e) {
+    console.log("/routes/activies.js error: " + e);
+    return res.json({error: e.message})
+  }
+});
 module.exports = router;
