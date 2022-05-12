@@ -22,15 +22,13 @@ router.post("/", async (req, res) => {
       });
       if (foundCountry) newActivity.addCountries(foundCountry);
     });
-    res.status(201).json({msg: "Activity created correctly"});
+    res.status(201).json({ msg: "Activity created correctly" });
   } catch (e) {
     console.log(e);
-    res
-      .status(400)
-      .json({
-        error: "CREATE_ACTIVITY_ERROR",
-        description: "Error creating the activity",
-      });
+    res.status(400).json({
+      error: "CREATE_ACTIVITY_ERROR",
+      description: "Error creating the activity",
+    });
   }
 });
 
@@ -45,4 +43,5 @@ router.get("/", async (req, res) => {
     res.json({ error: "There is not an activity created" });
   }
 });
+
 module.exports = router;
