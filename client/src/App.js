@@ -11,7 +11,7 @@ function App() {
         <Route exact path = "/" element={<LandingPage/>}/>
         <Route exact path = "/countries" element={<Home/>}/>
         <Route exact path = "/countries/:id" element={<Details/>}/>
-        <Route extact path= "/create" element={<CreateActivity/>}/>
+        <Route exact path= "/create" element={<CreateActivity/>}/>
       </Routes>
     </div>
   );
